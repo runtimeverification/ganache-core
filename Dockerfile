@@ -8,7 +8,7 @@ RUN    apt-get update        \
     && apt-get upgrade --yes
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-RUN apt-get install --yes nodejs
+RUN apt-get install --yes nodejs npm
 RUN npm install -g yarn
 
 ARG USER_ID=1000
