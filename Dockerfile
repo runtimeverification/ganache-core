@@ -4,8 +4,9 @@ ENV TZ=America/Chicago
 RUN    ln --symbolic --no-dereference --force /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone
 
-RUN    apt-get update        \
-    && apt-get upgrade --yes
+RUN    apt-get update                              \
+    && apt-get upgrade --yes                       \
+    && apt-get install --yes git protobuf-compiler
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install --yes nodejs npm
